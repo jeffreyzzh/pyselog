@@ -18,7 +18,7 @@ import os
 import shutil
 import time
 
-__version__ = '0.0.1'
+__version__ = '0.0.3'
 __license__ = 'MIT'
 __author__ = 'Jeffrey Zhang'
 
@@ -41,7 +41,7 @@ def create_logger(logname='pyselog', fileloglevel=False, streamloglevel=2, file_
     rl.setLevel(logging.DEBUG)
 
     formatter = logging.Formatter(
-        '%(asctime)s - %(pathname)s(line %(lineno)d) - %(name)s.%(levelname)s - : %(message)s')
+        '%(asctime)s  %(filename)s(line %(lineno)d)  %(threadName)s  %(name)s[%(levelname)s]  :  %(message)s')
 
     if fileloglevel:
         if file_folder == '%s_logs':
